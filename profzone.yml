@@ -1,0 +1,10 @@
+name: service-vehicle-robot
+group: robot
+version: 0.0.0
+description: 机器人服务端程序
+program_language: golang
+workflow:
+  extends: feature-pr
+scripts:
+  build: go build -v -o $PROJECT_NAME && libtools swagger
+  test: go test

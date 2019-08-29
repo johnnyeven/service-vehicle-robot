@@ -1,0 +1,23 @@
+from: ${PROFZONE_DOCKER_REGISTRY}/profzone/golang:runtime
+image: ${PROFZONE_DOCKER_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${PROJECT_VERSION}
+workdir: /go/bin
+env:
+  GOENV: DEV
+  S_LOG_FORMAT: json
+  S_MASTERDB_HOST: robot.db-routers.rancher.internal
+  S_MASTERDB_PORT: "3306"
+  S_SERVERGRPC_PORT: "999"
+  S_SERVERHTTP_PORT: "80"
+  S_SERVERHTTP_WITHCORS: "false"
+  S_SLAVEDB_HOST: robot-readonly.db-routers.rancher.internal
+  S_SLAVEDB_PORT: "3306"
+add:
+  ./config: ./config
+  ./profzone.yml: ./
+  ./service-vehicle-robot: ./
+  ./swagger.json: ./
+expose:
+- "80"
+cmd:
+- ./service-vehicle-robot
+- -c=false
