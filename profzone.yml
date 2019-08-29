@@ -1,5 +1,6 @@
 name: service-vehicle-robot
 group: robot
+owner: johnnyeven
 version: 0.0.0
 description: 机器人服务端程序
 program_language: golang
