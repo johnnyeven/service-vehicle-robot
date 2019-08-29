@@ -33,7 +33,7 @@ var Config = struct {
 		Port:     8000,
 	},
 	ServerGRPC: transport_grpc.ServeGRPC{
-		Port: 9000,
+		Port: 9900,
 	},
 
 	MasterDB: &mysql.MySQL{
