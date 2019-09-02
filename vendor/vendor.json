@@ -421,6 +421,18 @@
 			"revisionTime": "2019-05-08T11:49:29Z"
 		},
 		{
+			"checksumSHA1": "+CcCBxe8CxWUoIP57th0hCKxwSY=",
+			"path": "github.com/tensorflow/tensorflow/tensorflow/go",
+			"revision": "47ff0028a1de7a89751b0ef6126526c0a3afea32",
+			"revisionTime": "2019-09-01T09:03:09Z"
+		},
+		{
+			"checksumSHA1": "plsRVzeBn79nfMKqQS6zJQU2s/Y=",
+			"path": "github.com/tensorflow/tensorflow/tensorflow/go/op",
+			"revision": "47ff0028a1de7a89751b0ef6126526c0a3afea32",
+			"revisionTime": "2019-09-01T09:03:09Z"
+		},
+		{
 			"checksumSHA1": "TuSuFDkCZyZwXeFgZ6cIqaGctKo=",
 			"origin": "github.com/johnnyeven/libtools/vendor/github.com/vmihailenco/msgpack",
 			"path": "github.com/vmihailenco/msgpack",

@@ -3,12 +3,11 @@ package detaction
 import (
 	"bytes"
 	"context"
-	"fmt"
 	"github.com/johnnyeven/libtools/courier"
 	"github.com/johnnyeven/libtools/courier/httpx"
 	"github.com/johnnyeven/service-vehicle-robot/constants/errors"
+	"github.com/johnnyeven/service-vehicle-robot/global"
 	"image/jpeg"
-	"os"
 )
 
 func init() {
@@ -31,22 +30,32 @@ func (req ObjectDetection) Path() string {
 
 func (req ObjectDetection) Output(ctx context.Context) (result interface{}, err error) {
 	reader := bytes.NewReader(req.Body.Image)
-	jpgHandler, err := jpeg.Decode(reader)
+	_, err = jpeg.Decode(reader)
 	if err != nil {
 		err = errors.InternalError.StatusError().WithDesc(err.Error())
 		return
 	}
 
-	imageFile, err := os.OpenFile("./test.jpg", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, os.ModePerm)
+	num, boxes, classes, probabilities, err := global.Config.COCOModel.Predict(req.Body.Image)
 	if err != nil {
 		err = errors.InternalError.StatusError().WithDesc(err.Error())
 		return
 	}
 
-	err = jpeg.Encode(imageFile, jpgHandler, &jpeg.Options{Quality: 75})
-	if err != nil {
-		fmt.Println(err.Error())
+	data := make([]DetectivedObject, 0)
+	for i := 0; i < int(num); i++ {
+		data = append(data, DetectivedObject{
+			Class:       classes[i],
+			Box:         boxes[i],
+			Probability: probabilities[i],
+		})
 	}
 
-	return
+	return data, nil
+}
+
+type DetectivedObject struct {
+	Class       float32   `json:"class"`
+	Box         []float32 `json:"box"`
+	Probability float32   `json:"probability"`
 }

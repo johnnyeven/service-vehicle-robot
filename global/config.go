@@ -7,6 +7,7 @@ import (
 	"github.com/johnnyeven/libtools/servicex"
 	"github.com/johnnyeven/libtools/sqlx/mysql"
 	"github.com/johnnyeven/service-vehicle-robot/database"
+	"github.com/johnnyeven/service-vehicle-robot/modules"
 )
 
 func init() {
@@ -24,6 +25,8 @@ var Config = struct {
 
 	MasterDB *mysql.MySQL
 	SlaveDB  *mysql.MySQL
+
+	COCOModel *modules.COCOObjectDetectiveModel
 }{
 	Log: &log.Log{
 		Level: "DEBUG",
@@ -49,5 +52,9 @@ var Config = struct {
 		User:     "root",
 		Password: "123456",
 		Host:     "localhost",
+	},
+
+	COCOModel: &modules.COCOObjectDetectiveModel{
+		ModelPath: "./config/mobilenet",
 	},
 }
