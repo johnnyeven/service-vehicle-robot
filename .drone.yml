@@ -4,7 +4,7 @@ workspace:
 
 pipeline:
   build:
-    image: registry.profzone.net:5000/profzone/golang:onbuild
+    image: registry.profzone.net:5000/profzone/golang:onbuild-tensorflow
     pull: true
     commands:
       - profzone build
