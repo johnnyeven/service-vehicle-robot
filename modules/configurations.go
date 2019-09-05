@@ -4,6 +4,8 @@ import (
 	"github.com/johnnyeven/eden-library/clients/client_id"
 	"github.com/johnnyeven/eden-library/modules"
 	"github.com/johnnyeven/libtools/sqlx"
+	"github.com/johnnyeven/libtools/sqlx/builder"
+	"github.com/johnnyeven/service-vehicle-robot/constants/errors"
 	"github.com/johnnyeven/service-vehicle-robot/database"
 )
 
@@ -29,4 +31,16 @@ func CreateConfiguration(req CreateConfigurationBody, db *sqlx.DB, clientID *cli
 	}
 
 	return model.Create(db)
+}
+
+func FetchConfiguration(stackID uint64, size, offset int32, db *sqlx.DB) (result database.ConfigurationList, count int32, err error) {
+	model := &database.Configuration{}
+	if stackID == 0 {
+		err = errors.BadRequest
+		return
+	}
+
+	condition := builder.And(model.T().F("StackID").Eq(stackID))
+	result, count, err = model.FetchList(db, size, offset, condition)
+	return
 }
