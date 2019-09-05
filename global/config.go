@@ -2,6 +2,7 @@ package global
 
 import (
 	"github.com/johnnyeven/libtools/clients/client_id"
+	"github.com/johnnyeven/libtools/config_agent"
 	"github.com/johnnyeven/libtools/courier/client"
 	"github.com/johnnyeven/libtools/courier/transport_grpc"
 	"github.com/johnnyeven/libtools/courier/transport_http"
@@ -17,7 +18,6 @@ func init() {
 	servicex.ConfP(&Config)
 
 	database.DBRobot.MustMigrateTo(Config.MasterDB.Get(), !servicex.AutoMigrate)
-
 }
 
 var Config = struct {
@@ -28,9 +28,12 @@ var Config = struct {
 	MasterDB *mysql.MySQL
 	SlaveDB  *mysql.MySQL
 
-	ClientID *client_id.ClientID
+	ClientID    *client_id.ClientID
+	ConfigAgent *config_agent.Agent
 
 	COCOModel *modules.COCOObjectDetectiveModel
+
+	RobotConfiguration RobotConfiguration
 }{
 	Log: &log.Log{
 		Level: "DEBUG",
@@ -63,8 +66,15 @@ var Config = struct {
 			Host: "service-id.profzone.service.profzone.net",
 		},
 	},
+	ConfigAgent: &config_agent.Agent{
+		Host:               "service-configurations.profzone.service.profzone.net",
+		PullConfigInterval: 60,
+		StackID:            123,
+	},
 
 	COCOModel: &modules.COCOObjectDetectiveModel{
 		ModelPath: "./config/mobilenet",
 	},
+
+	RobotConfiguration: RobotConfiguration{},
 }
