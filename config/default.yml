@@ -1,4 +1,5 @@
 GOENV: DEV
+S_CLIENTID_HOST: service-id.robot.rancher.internal
 S_COCOMODEL_MODELPATH: ./config/mobilenet
 S_LOG_LEVEL: DEBUG
 S_MASTERDB_PASSWORD: "123456"

@@ -3,6 +3,8 @@ image: ${PROFZONE_DOCKER_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${PROJECT_VE
 workdir: /go/bin
 env:
   GOENV: DEV
+  S_CLIENTID_HOST: service-id.robot.rancher.internal
+  S_CLIENTID_PORT: "80"
   S_LOG_FORMAT: json
   S_MASTERDB_HOST: robot.db-routers.rancher.internal
   S_MASTERDB_PORT: "3306"

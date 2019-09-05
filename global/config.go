@@ -1,6 +1,8 @@
 package global
 
 import (
+	"github.com/johnnyeven/eden-library/clients/client_id"
+	"github.com/johnnyeven/libtools/courier/client"
 	"github.com/johnnyeven/libtools/courier/transport_grpc"
 	"github.com/johnnyeven/libtools/courier/transport_http"
 	"github.com/johnnyeven/libtools/log"
@@ -25,6 +27,8 @@ var Config = struct {
 
 	MasterDB *mysql.MySQL
 	SlaveDB  *mysql.MySQL
+
+	ClientID *client_id.ClientID
 
 	COCOModel *modules.COCOObjectDetectiveModel
 }{
@@ -52,6 +56,12 @@ var Config = struct {
 		User:     "root",
 		Password: "123456",
 		Host:     "localhost",
+	},
+
+	ClientID: &client_id.ClientID{
+		Client: client.Client{
+			Host: "service-id.profzone.service.profzone.net",
+		},
 	},
 
 	COCOModel: &modules.COCOObjectDetectiveModel{
