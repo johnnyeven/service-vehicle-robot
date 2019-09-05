@@ -6,6 +6,7 @@ import (
 	"github.com/johnnyeven/libtools/courier"
 	"github.com/johnnyeven/libtools/courier/httpx"
 	"github.com/johnnyeven/service-vehicle-robot/constants/errors"
+	"github.com/johnnyeven/service-vehicle-robot/constants/types"
 	"github.com/johnnyeven/service-vehicle-robot/global"
 	"image/jpeg"
 )
@@ -29,6 +30,10 @@ func (req ObjectDetection) Path() string {
 }
 
 func (req ObjectDetection) Output(ctx context.Context) (result interface{}, err error) {
+	data := make([]DetectivedObject, 0)
+	if global.Config.RobotConfiguration.CameraMode == types.CAMERA_MODE__NORMAL {
+		return data, nil
+	}
 	reader := bytes.NewReader(req.Body.Image)
 	_, err = jpeg.Decode(reader)
 	if err != nil {
@@ -42,7 +47,6 @@ func (req ObjectDetection) Output(ctx context.Context) (result interface{}, err 
 		return
 	}
 
-	data := make([]DetectivedObject, 0)
 	for i := 0; i < int(num); i++ {
 		data = append(data, DetectivedObject{
 			Class:       classes[i],
