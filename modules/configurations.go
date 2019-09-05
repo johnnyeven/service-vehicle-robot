@@ -1,8 +1,8 @@
 package modules
 
 import (
-	"github.com/johnnyeven/eden-library/clients/client_id"
-	"github.com/johnnyeven/eden-library/modules"
+	"github.com/johnnyeven/libtools/clients/client_id"
+	"github.com/johnnyeven/libtools/helper"
 	"github.com/johnnyeven/libtools/sqlx"
 	"github.com/johnnyeven/libtools/sqlx/builder"
 	"github.com/johnnyeven/service-vehicle-robot/constants/errors"
@@ -18,8 +18,8 @@ type CreateConfigurationBody struct {
 	Value string `db:"F_value" json:"value"`
 }
 
-func CreateConfiguration(req CreateConfigurationBody, db *sqlx.DB, clientID *client_id.ClientID) error {
-	id, err := modules.NewUniqueID(clientID)
+func CreateConfiguration(req CreateConfigurationBody, db *sqlx.DB, clientID client_id.ClientIDInterface) error {
+	id, err := helper.NewUniqueID(clientID)
 	if err != nil {
 		return err
 	}

@@ -1,7 +1,7 @@
 package global
 
 import (
-	"github.com/johnnyeven/eden-library/clients/client_id"
+	"github.com/johnnyeven/libtools/clients/client_id"
 	"github.com/johnnyeven/libtools/courier/client"
 	"github.com/johnnyeven/libtools/courier/transport_grpc"
 	"github.com/johnnyeven/libtools/courier/transport_http"

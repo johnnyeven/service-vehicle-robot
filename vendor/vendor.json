@@ -135,6 +135,12 @@
 			"revisionTime": "2019-03-03T09:15:52Z"
 		},
 		{
+			"checksumSHA1": "hee0Wp8lmEmD4rwuH/6+IEyUgaE=",
+			"path": "github.com/johnnyeven/libtools/clients/client_id",
+			"revision": "9d036440e057eb448cd1a272e5b416194f054735",
+			"revisionTime": "2019-09-05T02:44:32Z"
+		},
+		{
 			"checksumSHA1": "BFQR9OPWYz7e7Oe9eP2NDASoaks=",
 			"path": "github.com/johnnyeven/libtools/conf",
 			"revision": "9d036440e057eb448cd1a272e5b416194f054735",
@@ -227,6 +233,18 @@
 		{
 			"checksumSHA1": "lSQAvAWBj9DLMO7zSaAWKHR0BY8=",
 			"path": "github.com/johnnyeven/libtools/godash",
+			"revision": "9d036440e057eb448cd1a272e5b416194f054735",
+			"revisionTime": "2019-09-05T02:44:32Z"
+		},
+		{
+			"checksumSHA1": "LfMzrQnLpIc0M4nt0CFwAyF13zI=",
+			"path": "github.com/johnnyeven/libtools/helper",
+			"revision": "9d036440e057eb448cd1a272e5b416194f054735",
+			"revisionTime": "2019-09-05T02:44:32Z"
+		},
+		{
+			"checksumSHA1": "ycRK0ZlOC1swRnfwGuFziF8H/hs=",
+			"path": "github.com/johnnyeven/libtools/httplib",
 			"revision": "9d036440e057eb448cd1a272e5b416194f054735",
 			"revisionTime": "2019-09-05T02:44:32Z"
 		},
