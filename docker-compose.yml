@@ -2,5 +2,4 @@ version: "2"
 services:
   service-vehicle-robot:
     ports:
-      - 50080:80/tcp
-      - 50999:999/tcp
+      - 50999:9090/tcp

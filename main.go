@@ -12,6 +12,6 @@ func main() {
 	global.Config.ConfigAgent.BindConf(&global.Config.RobotConfiguration)
 	global.Config.ConfigAgent.Start()
 
-	go global.Config.ServerHTTP.Serve(routes.RootRouter)
-	global.Config.ServerGRPC.Serve(routes.RootRouter)
+	routes.InitRouters()
+	global.Config.ServeTeleport.Start()
 }

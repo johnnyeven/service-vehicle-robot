@@ -4,8 +4,7 @@ import (
 	"github.com/johnnyeven/libtools/clients/client_id"
 	"github.com/johnnyeven/libtools/config_agent"
 	"github.com/johnnyeven/libtools/courier/client"
-	"github.com/johnnyeven/libtools/courier/transport_grpc"
-	"github.com/johnnyeven/libtools/courier/transport_http"
+	"github.com/johnnyeven/libtools/courier/transport_teleport"
 	"github.com/johnnyeven/libtools/log"
 	"github.com/johnnyeven/libtools/servicex"
 	"github.com/johnnyeven/libtools/sqlx/mysql"
@@ -21,9 +20,9 @@ func init() {
 }
 
 var Config = struct {
-	Log        *log.Log
-	ServerHTTP transport_http.ServeHTTP
-	ServerGRPC transport_grpc.ServeGRPC
+	Log *log.Log
+
+	ServeTeleport *transport_teleport.ServeTeleport
 
 	MasterDB *mysql.MySQL
 	SlaveDB  *mysql.MySQL
@@ -38,12 +37,9 @@ var Config = struct {
 	Log: &log.Log{
 		Level: "DEBUG",
 	},
-	ServerHTTP: transport_http.ServeHTTP{
-		WithCORS: true,
-		Port:     8000,
-	},
-	ServerGRPC: transport_grpc.ServeGRPC{
-		Port: 9900,
+
+	ServeTeleport: &transport_teleport.ServeTeleport{
+		Port: 9090,
 	},
 
 	MasterDB: &mysql.MySQL{
