@@ -11,7 +11,7 @@ import (
 
 // 物体检测
 type ObjectDetection struct {
-	Body ObjectDetectionBody
+	tp.CallCtx
 }
 
 type ObjectDetectionBody struct {
