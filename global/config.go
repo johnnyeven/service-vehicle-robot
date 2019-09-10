@@ -65,7 +65,7 @@ var Config = struct {
 	ConfigAgent: &config_agent.Agent{
 		Host:               "service-configurations.profzone.service.profzone.net",
 		PullConfigInterval: 60,
-		StackID:            123,
+		StackID:            124,
 	},
 
 	COCOModel: &modules.COCOObjectDetectiveModel{
