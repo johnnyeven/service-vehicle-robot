@@ -1,4 +1,4 @@
-package modules
+package models
 
 import (
 	"io/ioutil"

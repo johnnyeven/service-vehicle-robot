@@ -1,4 +1,4 @@
-package modules
+package models
 
 import (
 	"bytes"
@@ -6,7 +6,6 @@ import (
 	tf "github.com/tensorflow/tensorflow/tensorflow/go"
 	"github.com/tensorflow/tensorflow/tensorflow/go/op"
 	"image"
-	"image/jpeg"
 	_ "image/jpeg"
 )
 
@@ -133,28 +132,4 @@ type DetectivedObject struct {
 	Class       float32   `json:"class"`
 	Box         []float32 `json:"box"`
 	Probability float32   `json:"probability"`
-}
-
-func DetectiveObject(image []byte, model *COCOObjectDetectiveModel) ([]DetectivedObject, error) {
-	data := make([]DetectivedObject, 0)
-	reader := bytes.NewReader(image)
-	_, err := jpeg.Decode(reader)
-	if err != nil {
-		return nil, err
-	}
-
-	num, boxes, classes, probabilities, err := model.Predict(image)
-	if err != nil {
-		return nil, err
-	}
-
-	for i := 0; i < int(num); i++ {
-		data = append(data, DetectivedObject{
-			Class:       classes[i],
-			Box:         boxes[i],
-			Probability: probabilities[i],
-		})
-	}
-
-	return data, nil
 }

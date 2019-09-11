@@ -9,7 +9,7 @@ import (
 	"github.com/johnnyeven/libtools/servicex"
 	"github.com/johnnyeven/libtools/sqlx/mysql"
 	"github.com/johnnyeven/service-vehicle-robot/database"
-	"github.com/johnnyeven/service-vehicle-robot/modules"
+	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
 
 func init() {
@@ -30,7 +30,7 @@ var Config = struct {
 	ClientID    *client_id.ClientID
 	ConfigAgent *config_agent.Agent
 
-	COCOModel *modules.COCOObjectDetectiveModel
+	COCOModel *models.COCOObjectDetectiveModel
 
 	RobotConfiguration RobotConfiguration
 }{
@@ -68,7 +68,7 @@ var Config = struct {
 		StackID:            124,
 	},
 
-	COCOModel: &modules.COCOObjectDetectiveModel{
+	COCOModel: &models.COCOObjectDetectiveModel{
 		ModelPath: "./config/mobilenet",
 	},
 
