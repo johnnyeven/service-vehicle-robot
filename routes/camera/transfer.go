@@ -1,7 +1,10 @@
 package camera
 
-import "github.com/henrylee2cn/teleport"
+import (
+	"github.com/henrylee2cn/teleport"
+	"github.com/johnnyeven/service-vehicle-robot/modules/models"
+)
 
-func (r *Camera) Object(frame *[]byte) *tp.Status {
+func (r *Camera) Object(req *models.CameraRequest) *tp.Status {
 	return nil
 }

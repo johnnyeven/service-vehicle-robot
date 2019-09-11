@@ -5,15 +5,19 @@ import (
 	"image/jpeg"
 )
 
-func DetectiveObject(image []byte, model *COCOObjectDetectiveModel) ([]DetectivedObject, error) {
+type CameraRequest struct {
+	Frame []byte
+}
+
+func DetectiveObject(req *CameraRequest, model *COCOObjectDetectiveModel) ([]DetectivedObject, error) {
 	data := make([]DetectivedObject, 0)
-	reader := bytes.NewReader(image)
+	reader := bytes.NewReader(req.Frame)
 	_, err := jpeg.Decode(reader)
 	if err != nil {
 		return nil, err
 	}
 
-	num, boxes, classes, probabilities, err := model.Predict(image)
+	num, boxes, classes, probabilities, err := model.Predict(req.Frame)
 	if err != nil {
 		return nil, err
 	}

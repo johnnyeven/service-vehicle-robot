@@ -2,7 +2,6 @@ package global
 
 import (
 	"github.com/henrylee2cn/teleport"
-	"github.com/henrylee2cn/teleport/examples/plugin-tps"
 	"github.com/johnnyeven/libtools/clients/client_id"
 	"github.com/johnnyeven/libtools/config_agent"
 	"github.com/johnnyeven/libtools/courier/client"
@@ -11,6 +10,7 @@ import (
 	"github.com/johnnyeven/libtools/servicex"
 	"github.com/johnnyeven/libtools/sqlx/mysql"
 	"github.com/johnnyeven/service-vehicle-robot/database"
+	"github.com/johnnyeven/service-vehicle-robot/modules/middlewares"
 	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
 
@@ -41,8 +41,10 @@ var Config = struct {
 	},
 
 	ServeTeleport: &transport_teleport.ServeTeleport{
-		Port:    9090,
-		Plugins: []tp.Plugin{tps.NewTPS(5)},
+		Port: 9090,
+		Plugins: []tp.Plugin{
+			&middlewares.AuthPlugin{},
+		},
 	},
 
 	MasterDB: &mysql.MySQL{
