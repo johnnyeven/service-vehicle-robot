@@ -21,7 +21,6 @@ func (*AuthPlugin) PostReadCallBody(ctx tp.ReadCtx) *tp.Status {
 func (*AuthPlugin) PostReadPushBody(ctx tp.ReadCtx) *tp.Status {
 	rv := reflect.ValueOf(ctx.Input().Body())
 	rv = rv.Elem()
-	fmt.Println(rv.Interface())
 	if rv.Kind() == reflect.Struct {
 		tokenV := rv.FieldByName("Token")
 		if !tokenV.IsValid() {
