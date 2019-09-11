@@ -19,6 +19,10 @@ func (*AuthPlugin) PostReadCallBody(ctx tp.ReadCtx) *tp.Status {
 }
 
 func (*AuthPlugin) PostReadPushBody(ctx tp.ReadCtx) *tp.Status {
+	method := ctx.Input().ServiceMethod()
+	if method == "/authorization/auth" {
+		return nil
+	}
 	rv := reflect.ValueOf(ctx.Input().Body())
 	rv = rv.Elem()
 	if rv.Kind() == reflect.Struct {
