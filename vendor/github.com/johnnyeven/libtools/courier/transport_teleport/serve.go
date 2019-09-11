@@ -65,3 +65,7 @@ func (s *ServeTeleport) Stop() error {
 func (s *ServeTeleport) RegisterCallRouter(route interface{}, plugins ...tp.Plugin) []string {
 	return s.server.RouteCall(route, plugins...)
 }
+
+func (s *ServeTeleport) RegisterPushRouter(route interface{}, plugins ...tp.Plugin) []string {
+	return s.server.RoutePush(route, plugins...)
+}
