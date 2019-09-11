@@ -254,10 +254,10 @@
 			"revisionTime": "2019-09-06T14:41:22Z"
 		},
 		{
-			"checksumSHA1": "BFQR9OPWYz7e7Oe9eP2NDASoaks=",
+			"checksumSHA1": "YFJKa0ChkJNLcfahQgiapISsH3M=",
 			"path": "github.com/johnnyeven/libtools/conf",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "fa1b00f553b4b1f0dab6e32a5ed5082930aeb73a",
+			"revisionTime": "2019-09-11T07:45:09Z"
 		},
 		{
 			"checksumSHA1": "b5E8p5uBKRSzrHnO3dOG5XbtA+E=",
@@ -326,7 +326,7 @@
 			"revisionTime": "2019-09-06T14:41:22Z"
 		},
 		{
-			"checksumSHA1": "dMf79op5M63yv/Be04QqKLYuMqY=",
+			"checksumSHA1": "Q3cE22z/wQ2kLc7vNXdxXvtuq4Y=",
 			"path": "github.com/johnnyeven/libtools/courier/transport_teleport",
 			"revision": "fa1b00f553b4b1f0dab6e32a5ed5082930aeb73a",
 			"revisionTime": "2019-09-11T07:45:09Z"

@@ -1,6 +1,8 @@
 package global
 
 import (
+	"github.com/henrylee2cn/teleport"
+	"github.com/henrylee2cn/teleport/examples/plugin-tps"
 	"github.com/johnnyeven/libtools/clients/client_id"
 	"github.com/johnnyeven/libtools/config_agent"
 	"github.com/johnnyeven/libtools/courier/client"
@@ -39,7 +41,8 @@ var Config = struct {
 	},
 
 	ServeTeleport: &transport_teleport.ServeTeleport{
-		Port: 9090,
+		Port:    9090,
+		Plugins: []tp.Plugin{tps.NewTPS(5)},
 	},
 
 	MasterDB: &mysql.MySQL{

@@ -19,6 +19,7 @@ type ServeTeleport struct {
 	SlowCometDuration  time.Duration `conf:"env"`
 	PrintDetail        bool          `conf:"env"`
 	CountTime          bool          `conf:"env"`
+	Plugins            []tp.Plugin   `conf:"-"`
 
 	server tp.Peer
 }
@@ -37,7 +38,7 @@ func (s *ServeTeleport) Init() {
 		SlowCometDuration:  s.SlowCometDuration,
 		PrintDetail:        s.PrintDetail,
 		CountTime:          s.CountTime,
-	})
+	}, s.Plugins...)
 }
 
 func (s ServeTeleport) MarshalDefaults(v interface{}) {
@@ -50,7 +51,7 @@ func (s ServeTeleport) MarshalDefaults(v interface{}) {
 
 func (s *ServeTeleport) DockerDefaults() conf.DockerDefaults {
 	return conf.DockerDefaults{
-		"Port":     9090,
+		"Port": 9090,
 	}
 }
 
