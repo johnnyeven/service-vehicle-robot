@@ -12,7 +12,7 @@ func main() {
 	global.Config.ConfigAgent.BindConf(&global.Config.RobotConfiguration)
 	global.Config.ConfigAgent.Start()
 
-	global.Config.NodeManager.Init(global.Config.SlaveDB.Get())
+	global.Config.NodeManager.Init(global.Config.MasterDB.Get())
 
 	routes.InitRouters()
 	go global.Config.ServeHTTP.Serve(routes.RootRouter)

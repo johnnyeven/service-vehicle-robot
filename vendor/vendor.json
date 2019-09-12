@@ -362,6 +362,12 @@
 			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
+			"checksumSHA1": "LfMzrQnLpIc0M4nt0CFwAyF13zI=",
+			"path": "github.com/johnnyeven/libtools/helper",
+			"revision": "ddf6167a9545dd0ce7f3b83f85ab594d33aaedd6",
+			"revisionTime": "2019-09-12T06:16:55Z"
+		},
+		{
 			"checksumSHA1": "7Y9jOgUyTwsy7+iMujVSTFr2bVQ=",
 			"path": "github.com/johnnyeven/libtools/log",
 			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
