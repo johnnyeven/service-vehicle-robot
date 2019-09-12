@@ -34,7 +34,7 @@ var Config = struct {
 
 	ClientID    *client_id.ClientID
 	ConfigAgent *config_agent.Agent
-	NodeManager modules.NodeManager `conf:"-"`
+	NodeManager *modules.NodeManager `conf:"-"`
 
 	COCOModel *models.COCOObjectDetectiveModel
 
@@ -80,6 +80,7 @@ var Config = struct {
 		PullConfigInterval: 60,
 		StackID:            124,
 	},
+	NodeManager: &modules.NodeManager{},
 
 	COCOModel: &models.COCOObjectDetectiveModel{
 		ModelPath: "./config/mobilenet",
