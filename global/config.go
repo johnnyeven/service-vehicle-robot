@@ -5,11 +5,13 @@ import (
 	"github.com/johnnyeven/libtools/clients/client_id"
 	"github.com/johnnyeven/libtools/config_agent"
 	"github.com/johnnyeven/libtools/courier/client"
+	"github.com/johnnyeven/libtools/courier/transport_http"
 	"github.com/johnnyeven/libtools/courier/transport_teleport"
 	"github.com/johnnyeven/libtools/log"
 	"github.com/johnnyeven/libtools/servicex"
 	"github.com/johnnyeven/libtools/sqlx/mysql"
 	"github.com/johnnyeven/service-vehicle-robot/database"
+	"github.com/johnnyeven/service-vehicle-robot/modules"
 	"github.com/johnnyeven/service-vehicle-robot/modules/middlewares"
 	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
@@ -25,12 +27,14 @@ var Config = struct {
 	Log *log.Log
 
 	ServeTeleport *transport_teleport.ServeTeleport
+	ServeHTTP     transport_http.ServeHTTP
 
 	MasterDB *mysql.MySQL
 	SlaveDB  *mysql.MySQL
 
 	ClientID    *client_id.ClientID
 	ConfigAgent *config_agent.Agent
+	NodeManager modules.NodeManager `conf:"-"`
 
 	COCOModel *models.COCOObjectDetectiveModel
 
@@ -45,6 +49,10 @@ var Config = struct {
 		Plugins: []tp.Plugin{
 			&middlewares.AuthPlugin{},
 		},
+	},
+	ServeHTTP: transport_http.ServeHTTP{
+		WithCORS: true,
+		Port:     8000,
 	},
 
 	MasterDB: &mysql.MySQL{

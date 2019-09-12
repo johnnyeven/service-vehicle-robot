@@ -1,5 +1,5 @@
 package models
 
-type AuthRequest struct {
+type AuthRequestHeader struct {
 	Token string
 }

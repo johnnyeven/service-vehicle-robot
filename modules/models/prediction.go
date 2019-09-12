@@ -6,7 +6,7 @@ import (
 )
 
 type CameraRequest struct {
-	AuthRequest
+	AuthRequestHeader
 	Frame []byte
 }
 

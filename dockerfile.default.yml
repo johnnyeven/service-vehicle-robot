@@ -14,6 +14,8 @@ env:
   S_LOG_FORMAT: json
   S_MASTERDB_HOST: robot.db-routers.rancher.internal
   S_MASTERDB_PORT: "3306"
+  S_SERVEHTTP_PORT: "80"
+  S_SERVEHTTP_WITHCORS: "false"
   S_SERVETELEPORT_PORT: "9090"
   S_SLAVEDB_HOST: robot-readonly.db-routers.rancher.internal
   S_SLAVEDB_PORT: "3306"
@@ -21,6 +23,7 @@ add:
   ./config: ./config
   ./profzone.yml: ./
   ./service-vehicle-robot: ./
+  ./swagger.json: ./
 expose:
 - "80"
 cmd:

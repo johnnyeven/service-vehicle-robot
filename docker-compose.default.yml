@@ -3,8 +3,10 @@ services:
   service-vehicle-robot:
     image: ${PROFZONE_DOCKER_REGISTRY}/${PROJECT_GROUP}/${PROJECT_NAME}:${PROJECT_VERSION}
     labels:
+      base_path: /vehicle-robot
       io.rancher.container.pull_image: always
       io.rancher.container.start_once: "true"
+      lb.g7pay.expose80: /vehicle-robot
       project.description: ${PROJECT_DESCRIPTION}
       project.group: ${PROJECT_GROUP}
       project.name: ${PROJECT_NAME}
