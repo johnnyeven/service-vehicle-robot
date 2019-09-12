@@ -244,230 +244,230 @@
 		{
 			"checksumSHA1": "B5bFknJjXk2/90iRByRAxUNRrQg=",
 			"path": "github.com/johnnyeven/libtools/clients/client_configurations",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "hee0Wp8lmEmD4rwuH/6+IEyUgaE=",
 			"path": "github.com/johnnyeven/libtools/clients/client_id",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "YFJKa0ChkJNLcfahQgiapISsH3M=",
 			"path": "github.com/johnnyeven/libtools/conf",
-			"revision": "fa1b00f553b4b1f0dab6e32a5ed5082930aeb73a",
-			"revisionTime": "2019-09-11T07:45:09Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "b5E8p5uBKRSzrHnO3dOG5XbtA+E=",
 			"path": "github.com/johnnyeven/libtools/conf/presets",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "0gE8MXWMbMRUc3Kqz3E1XbWMGDY=",
 			"path": "github.com/johnnyeven/libtools/config_agent",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "69txjtq43bcpcLCTGWhYxOmGeGU=",
 			"path": "github.com/johnnyeven/libtools/courier",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "BMhv217roTJ+3LCqaeXDFcrxarY=",
 			"path": "github.com/johnnyeven/libtools/courier/client",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "c+N5ksRHsPzCAxrvD+m/y/DtmVs=",
 			"path": "github.com/johnnyeven/libtools/courier/enumeration",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "NYxk2KPtkb/oGq0Q1IHuB9QF32Y=",
 			"path": "github.com/johnnyeven/libtools/courier/httpx",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "wRtopK1GiCyWF8ZHSMqJ+/znA8A=",
 			"path": "github.com/johnnyeven/libtools/courier/status_error",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "QkTiIOIrkDAos3jBn6VG70fJvEM=",
 			"path": "github.com/johnnyeven/libtools/courier/swagger",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "6nejN/Q3uT5zVSHeTYkZtuwDrs8=",
 			"path": "github.com/johnnyeven/libtools/courier/transport_grpc",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
-			"checksumSHA1": "eMRw6AOY9Z6DUO8OVsJ+K5Z0gt4=",
+			"checksumSHA1": "23vZuMoXvJmddX2OwGfdluhdWiM=",
 			"path": "github.com/johnnyeven/libtools/courier/transport_http",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "xQn1X658m6t21kB5WQFVyc8SSVc=",
 			"path": "github.com/johnnyeven/libtools/courier/transport_http/transform",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "Q3cE22z/wQ2kLc7vNXdxXvtuq4Y=",
 			"path": "github.com/johnnyeven/libtools/courier/transport_teleport",
-			"revision": "fa1b00f553b4b1f0dab6e32a5ed5082930aeb73a",
-			"revisionTime": "2019-09-11T07:45:09Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "MEdikhzbGJyZR4576rQiEOYdy/s=",
 			"path": "github.com/johnnyeven/libtools/docker",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "tCFEvmX1jTWpZrdw1/9oFlwrzTY=",
 			"path": "github.com/johnnyeven/libtools/duration",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "b6Z4c/dKYsT14vsRoMnWeiovhbQ=",
 			"path": "github.com/johnnyeven/libtools/env",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "Lx6VApqmoQuMb2vYwEPRDOjEsAY=",
 			"path": "github.com/johnnyeven/libtools/executil",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "lSQAvAWBj9DLMO7zSaAWKHR0BY8=",
 			"path": "github.com/johnnyeven/libtools/godash",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "7Y9jOgUyTwsy7+iMujVSTFr2bVQ=",
 			"path": "github.com/johnnyeven/libtools/log",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
-			"checksumSHA1": "OnBJJd3T+CUi4h+zt6W5HhCtDJs=",
+			"checksumSHA1": "37AbxDBl5O0tdmoGVeUpASCO95o=",
 			"path": "github.com/johnnyeven/libtools/log/context",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "bijz7Os7bnVH7ITXT/5GJcWyYiY=",
 			"path": "github.com/johnnyeven/libtools/log/hooks",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "69ldo9aan7fWQZuNODrgZXgVz6s=",
 			"path": "github.com/johnnyeven/libtools/ptr",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "fTp8XtOz5vbdF/gHpdgsce6iUTc=",
 			"path": "github.com/johnnyeven/libtools/reflectx",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "6jqzEH5uqnjmDG8zTW7CDgzXljQ=",
 			"path": "github.com/johnnyeven/libtools/service/dockerizier",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "9F5IPI0K5zXhog2+IXQxgAZQmKc=",
 			"path": "github.com/johnnyeven/libtools/servicex",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "mK1XUAbY10DjEeKg5P4FoFyDL3U=",
 			"path": "github.com/johnnyeven/libtools/servicex/internal",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "y2zz6cn+kiSLjKNnpcWZVl6ejPc=",
 			"path": "github.com/johnnyeven/libtools/sqlx",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "OAIiylfnYeCL53vzzmrdfkOLwJk=",
 			"path": "github.com/johnnyeven/libtools/sqlx/builder",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "zlsIJ991yVPstuC8xIh+Wp5gTCw=",
 			"path": "github.com/johnnyeven/libtools/sqlx/data_type",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "H6B3e1uVGtR5/vg1cW9J6fzJbaU=",
 			"path": "github.com/johnnyeven/libtools/sqlx/mysql",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "QnoQdqzs3Tyb3v0LN2BLOePlOC4=",
 			"path": "github.com/johnnyeven/libtools/sqlx/mysql_logger_driver",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "fIYIy8qE8HVaoy2+CFRk1phASAY=",
 			"path": "github.com/johnnyeven/libtools/sqlx/presets",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "AhU/fDhlY9g3cYzWmTAsHFpZG8I=",
 			"path": "github.com/johnnyeven/libtools/strutil",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "qcq5snNZa6XJfz7z/w5UjPRvMJ0=",
 			"path": "github.com/johnnyeven/libtools/timelib",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "8zSEVoeVfdSsohROFIhWBVhzEGw=",
 			"path": "github.com/johnnyeven/libtools/validate",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "YSgHvU6kJLnhQqR2NBxdHDvGS1Q=",
 			"path": "github.com/johnnyeven/libtools/validate/validatetpl",
-			"revision": "beca5fd587d54c904eaf86b2b3627d766567cdbe",
-			"revisionTime": "2019-09-06T14:41:22Z"
+			"revision": "7d0777626fee6f598f6e7b155af2b0548892109f",
+			"revisionTime": "2019-09-12T07:49:50Z"
 		},
 		{
 			"checksumSHA1": "T+kh2poktvucf6QrY3nRo09otto=",
@@ -626,16 +626,16 @@
 			"revisionTime": "2019-01-25T09:00:48Z"
 		},
 		{
-			"checksumSHA1": "+CcCBxe8CxWUoIP57th0hCKxwSY=",
+			"checksumSHA1": "dOETT9DcLvUQC9lkDWuacD6lBr4=",
 			"path": "github.com/tensorflow/tensorflow/tensorflow/go",
-			"revision": "47ff0028a1de7a89751b0ef6126526c0a3afea32",
-			"revisionTime": "2019-09-01T09:03:09Z"
+			"revision": "25e5c91b9740400e4a0f712a0c05859d6c8b014f",
+			"revisionTime": "2019-09-07T06:02:24Z"
 		},
 		{
 			"checksumSHA1": "plsRVzeBn79nfMKqQS6zJQU2s/Y=",
 			"path": "github.com/tensorflow/tensorflow/tensorflow/go/op",
-			"revision": "47ff0028a1de7a89751b0ef6126526c0a3afea32",
-			"revisionTime": "2019-09-01T09:03:09Z"
+			"revision": "25e5c91b9740400e4a0f712a0c05859d6c8b014f",
+			"revisionTime": "2019-09-07T06:02:24Z"
 		},
 		{
 			"checksumSHA1": "TuSuFDkCZyZwXeFgZ6cIqaGctKo=",
