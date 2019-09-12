@@ -7,5 +7,5 @@ program_language: golang
 workflow:
   extends: feature-pr
 scripts:
-  build: go build -v -o $PROJECT_NAME
+  build: go build -v -o $PROJECT_NAME && libtools swagger
   test: go test
