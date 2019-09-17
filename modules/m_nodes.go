@@ -111,6 +111,15 @@ func (mgr *NodeManager) GetNodeByKey(key string) (node *Node, err error) {
 	return
 }
 
+func (mgr *NodeManager) GetRobotNode() (nodes []*Node) {
+	for _, n := range mgr.nodes {
+		if n.NodeType == types.NODE_TYPE__ROBOT {
+			nodes = append(nodes, &n)
+		}
+	}
+	return
+}
+
 func (mgr *NodeManager) SetHostNode(node *Node) {
 	mgr.hostNode = node
 }
