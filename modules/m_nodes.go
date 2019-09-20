@@ -23,17 +23,17 @@ type RegisterNodeBody struct {
 
 type Node struct {
 	// key
-	Key string
+	Key string `json:"key"`
 	// secret
-	Secret string
+	Secret string `json:"secret"`
 	// 描述
-	Comment string
+	Comment string `json:"comment"`
 	// 端类型
-	NodeType types.NodeType
+	NodeType types.NodeType `json:"nodeType"`
 	// peer
-	Session tp.CtxSession
+	Session tp.CtxSession `json:"-"`
 	// Token
-	Token string
+	Token string `json:"token"`
 }
 
 func (n *Node) GenerateToken() string {

@@ -3,12 +3,12 @@ package models
 import "github.com/johnnyeven/service-vehicle-robot/modules"
 
 type AuthRequestHeader struct {
-	Token string
+	Token string `json:"token"`
 }
 
 type CameraRequest struct {
 	AuthRequestHeader
-	Frame []byte
+	Frame []byte `json:"frame"`
 }
 
 type GetNodesRequest struct {
@@ -16,5 +16,5 @@ type GetNodesRequest struct {
 }
 
 type NodesResponse struct {
-	Nodes []*modules.Node
+	Nodes []*modules.Node `json:"nodes"`
 }
