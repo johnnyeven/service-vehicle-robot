@@ -8,14 +8,17 @@ import (
 	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
 
-func (a *Authorization) Auth(req *models.AuthRequest) (token []byte, status *tp.Status) {
+func (a *Authorization) Auth(req *models.AuthRequest) (resp models.AuthResponse, status *tp.Status) {
 	node, err := global.Config.NodeManager.GetNodeByKey(req.Key)
 	if err != nil {
-		return nil, tp.NewStatus(int32(errors.Forbidden), "", errors.Forbidden.StatusError())
+		status = tp.NewStatus(int32(errors.Forbidden), "", errors.Forbidden.StatusError())
+		return
 	}
 	node.Session = a.Session()
 	if node.NodeType == types.NODE_TYPE__HOST {
 		global.Config.NodeManager.SetHostNode(node)
 	}
+
+	resp.Token = node.GenerateToken()
 	return
 }

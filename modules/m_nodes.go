@@ -1,6 +1,8 @@
 package modules
 
 import (
+	"encoding/base64"
+	"github.com/google/uuid"
 	"github.com/henrylee2cn/teleport"
 	"github.com/johnnyeven/libtools/sqlx"
 	"github.com/johnnyeven/service-vehicle-robot/constants/types"
@@ -30,6 +32,14 @@ type Node struct {
 	NodeType types.NodeType
 	// peer
 	Session tp.CtxSession
+	// Token
+	Token string
+}
+
+func (n *Node) GenerateToken() string {
+	data := n.Key + uuid.New().String()
+	n.Token = base64.StdEncoding.EncodeToString([]byte(data))
+	return n.Token
 }
 
 type NodeManager struct {

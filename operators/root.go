@@ -1,9 +1,9 @@
-package routes
+package operators
 
 import (
 	"github.com/johnnyeven/libtools/courier"
 	"github.com/johnnyeven/libtools/courier/swagger"
-	"github.com/johnnyeven/service-vehicle-robot/routes/nodes"
+	"github.com/johnnyeven/service-vehicle-robot/operators/nodes"
 )
 
 var RootRouter = courier.NewRouter(GroupRoot{})
