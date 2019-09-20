@@ -5,11 +5,6 @@ import (
 	"image/jpeg"
 )
 
-type CameraRequest struct {
-	AuthRequestHeader
-	Frame []byte
-}
-
 func DetectiveObject(req *CameraRequest, model *COCOObjectDetectiveModel) ([]DetectivedObject, error) {
 	data := make([]DetectivedObject, 0)
 	reader := bytes.NewReader(req.Frame)
