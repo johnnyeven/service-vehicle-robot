@@ -34,6 +34,8 @@ type Node struct {
 	Session tp.CtxSession `json:"-"`
 	// Token
 	Token string `json:"token"`
+	// 是否在线
+	IsOnline bool `json:"isOnline"`
 }
 
 func (n *Node) GenerateToken() string {

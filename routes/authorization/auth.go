@@ -18,6 +18,7 @@ func (a *Authorization) Auth(req *models.AuthRequest) (resp models.AuthResponse,
 	if node.NodeType == types.NODE_TYPE__HOST {
 		global.Config.NodeManager.SetHostNode(node)
 	}
+	node.IsOnline = true
 
 	resp.Token = node.GenerateToken()
 	return
