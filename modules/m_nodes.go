@@ -48,7 +48,6 @@ func (n *Node) GenerateToken() string {
 
 type NodeManager struct {
 	hostNode    *Node
-	nodes       []Node
 	nodesKeyMap map[string]*Node
 	db          *sqlx.DB
 }
@@ -69,7 +68,6 @@ func (mgr *NodeManager) Init(db *sqlx.DB) {
 			Comment:  node.Comment,
 			NodeType: node.NodeType,
 		}
-		mgr.nodes = append(mgr.nodes, item)
 		mgr.nodesKeyMap[node.Key] = &item
 	}
 }
@@ -98,15 +96,14 @@ func (mgr *NodeManager) RegisterNode(id uint64, body RegisterNodeBody) error {
 		Comment:  model.Comment,
 		NodeType: model.NodeType,
 	}
-	mgr.nodes = append(mgr.nodes, item)
 	mgr.nodesKeyMap[model.Key] = &item
 	return nil
 }
 
 func (mgr *NodeManager) GetNodeBySessionID(id string) (*Node, error) {
-	for _, node := range mgr.nodes {
-		if id == node.Session.ID() {
-			return &node, nil
+	for _, node := range mgr.nodesKeyMap {
+		if node.Session != nil && id == node.Session.ID() {
+			return node, nil
 		}
 	}
 
@@ -130,15 +127,14 @@ func (mgr *NodeManager) GetNodeByKey(key string) (node *Node, err error) {
 		Comment:  model.Comment,
 		NodeType: model.NodeType,
 	}
-	mgr.nodes = append(mgr.nodes, *node)
 	mgr.nodesKeyMap[model.Key] = node
 	return
 }
 
 func (mgr *NodeManager) GetRobotNode() (nodes []*Node) {
-	for _, n := range mgr.nodes {
+	for _, n := range mgr.nodesKeyMap {
 		if n.NodeType == types.NODE_TYPE__ROBOT {
-			nodes = append(nodes, &n)
+			nodes = append(nodes, n)
 		}
 	}
 	return

@@ -19,6 +19,7 @@ func (p *DisconnectPlugin) PostDisconnect(sess tp.BaseSession) *tp.Status {
 	node, _ := p.Mgr.GetNodeBySessionID(sess.ID())
 	if node != nil {
 		node.IsOnline = false
+		node.Session = nil
 		if node.NodeType == types.NODE_TYPE__HOST {
 			p.Mgr.SetHostNode(nil)
 		}
