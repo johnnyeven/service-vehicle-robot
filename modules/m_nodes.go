@@ -10,6 +10,8 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+var Manager = &NodeManager{}
+
 type RegisterNodeBody struct {
 	// key
 	Key string `json:"key"`
@@ -45,10 +47,10 @@ func (n *Node) GenerateToken() string {
 }
 
 type NodeManager struct {
-	hostNode *Node
-	nodes    []Node
-	nodesMap map[string]*Node
-	db       *sqlx.DB
+	hostNode    *Node
+	nodes       []Node
+	nodesKeyMap map[string]*Node
+	db          *sqlx.DB
 }
 
 func (mgr *NodeManager) Init(db *sqlx.DB) {
@@ -59,7 +61,7 @@ func (mgr *NodeManager) Init(db *sqlx.DB) {
 		logrus.Panicf("[NodeManager] Init err: %v", err)
 	}
 
-	mgr.nodesMap = make(map[string]*Node)
+	mgr.nodesKeyMap = make(map[string]*Node)
 	for _, node := range list {
 		item := Node{
 			Key:      node.Key,
@@ -68,7 +70,7 @@ func (mgr *NodeManager) Init(db *sqlx.DB) {
 			NodeType: node.NodeType,
 		}
 		mgr.nodes = append(mgr.nodes, item)
-		mgr.nodesMap[node.Key] = &item
+		mgr.nodesKeyMap[node.Key] = &item
 	}
 }
 
@@ -97,12 +99,22 @@ func (mgr *NodeManager) RegisterNode(id uint64, body RegisterNodeBody) error {
 		NodeType: model.NodeType,
 	}
 	mgr.nodes = append(mgr.nodes, item)
-	mgr.nodesMap[model.Key] = &item
+	mgr.nodesKeyMap[model.Key] = &item
 	return nil
 }
 
+func (mgr *NodeManager) GetNodeBySessionID(id string) (*Node, error) {
+	for _, node := range mgr.nodes {
+		if id == node.Session.ID() {
+			return &node, nil
+		}
+	}
+
+	return nil, nil
+}
+
 func (mgr *NodeManager) GetNodeByKey(key string) (node *Node, err error) {
-	if v, ok := mgr.nodesMap[key]; ok {
+	if v, ok := mgr.nodesKeyMap[key]; ok {
 		return v, nil
 	}
 	model := &database.Nodes{
@@ -119,7 +131,7 @@ func (mgr *NodeManager) GetNodeByKey(key string) (node *Node, err error) {
 		NodeType: model.NodeType,
 	}
 	mgr.nodes = append(mgr.nodes, *node)
-	mgr.nodesMap[model.Key] = node
+	mgr.nodesKeyMap[model.Key] = node
 	return
 }
 

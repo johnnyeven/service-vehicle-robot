@@ -31,7 +31,7 @@ func (req RegisterNode) Output(ctx context.Context) (result interface{}, err err
 		return
 	}
 
-	err = global.Config.NodeManager.RegisterNode(id, req.Body)
+	err = modules.Manager.RegisterNode(id, req.Body)
 	if err != nil {
 		logrus.Errorf("[RegisterNode] NodeManager.RegisterNode err: %v, request: %+v", err, req.Body)
 	}

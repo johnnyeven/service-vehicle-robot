@@ -34,7 +34,6 @@ var Config = struct {
 
 	ClientID    *client_id.ClientID
 	ConfigAgent *config_agent.Agent
-	NodeManager *modules.NodeManager `conf:"-"`
 
 	COCOModel *models.COCOObjectDetectiveModel
 
@@ -42,13 +41,6 @@ var Config = struct {
 }{
 	Log: &log.Log{
 		Level: "DEBUG",
-	},
-
-	ServeTeleport: &transport_teleport.ServeTeleport{
-		Port: 9090,
-		Plugins: []tp.Plugin{
-			&middlewares.AuthPlugin{},
-		},
 	},
 	ServeHTTP: transport_http.ServeHTTP{
 		WithCORS: true,
@@ -80,11 +72,20 @@ var Config = struct {
 		PullConfigInterval: 60,
 		StackID:            124,
 	},
-	NodeManager: &modules.NodeManager{},
 
 	COCOModel: &models.COCOObjectDetectiveModel{
 		ModelPath: "./config/mobilenet",
 	},
 
 	RobotConfiguration: RobotConfiguration{},
+
+	ServeTeleport: &transport_teleport.ServeTeleport{
+		Port: 9090,
+		Plugins: []tp.Plugin{
+			&middlewares.AuthPlugin{},
+			&middlewares.DisconnectPlugin{
+				Mgr: modules.Manager,
+			},
+		},
+	},
 }
