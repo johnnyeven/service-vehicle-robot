@@ -1,6 +1,9 @@
 package models
 
-import "github.com/johnnyeven/service-vehicle-robot/modules"
+import (
+	"github.com/johnnyeven/service-vehicle-robot/modules"
+	"github.com/johnnyeven/vehicle-robot-client/constants"
+)
 
 type AuthRequestHeader struct {
 	Token string `json:"token"`
@@ -25,4 +28,11 @@ type GetNodesRequest struct {
 
 type NodesResponse struct {
 	Nodes []*modules.Node `json:"nodes"`
+}
+
+type PowerMovingRequest struct {
+	AuthRequestHeader
+	Target    string                    `json:"target"`
+	Direction constants.MovingDirection `json:"direction"`
+	Speed     float64                   `json:"speed"`
 }
