@@ -6,6 +6,7 @@ import (
 	"github.com/johnnyeven/service-vehicle-robot/routes/camera"
 	"github.com/johnnyeven/service-vehicle-robot/routes/detection"
 	"github.com/johnnyeven/service-vehicle-robot/routes/nodes"
+	"github.com/johnnyeven/service-vehicle-robot/routes/power"
 )
 
 func InitRouters() {
@@ -14,4 +15,5 @@ func InitRouters() {
 	server.RegisterCallRouter(&nodes.Nodes{})
 	server.RegisterCallRouter(&detection.Detection{})
 	server.RegisterPushRouter(&camera.Camera{})
+	server.RegisterPushRouter(&power.Power{})
 }
