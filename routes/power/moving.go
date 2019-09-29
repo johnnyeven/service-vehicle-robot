@@ -16,7 +16,7 @@ func (p *Power) Moving(req *models.PowerMovingRequest) *tp.Status {
 		return tp.NewStatus(int32(errors.NotFound), err.Error(), errors.NotFound.StatusError())
 	}
 
-	if !node.IsOnline || node.Session == nil || node.Session.Health() {
+	if !node.IsOnline || node.Session == nil || !node.Session.Health() {
 		return tp.NewStatus(int32(errors.Forbidden), "远程端无法触达", errors.Forbidden.StatusError())
 	}
 
