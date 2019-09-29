@@ -1,7 +1,6 @@
 package middlewares
 
 import (
-	"fmt"
 	"github.com/henrylee2cn/teleport"
 	"github.com/johnnyeven/service-vehicle-robot/constants/errors"
 	"reflect"
@@ -34,8 +33,8 @@ func (p *AuthPlugin) checkToken(body interface{}) *tp.Status {
 		if !tokenV.IsValid() {
 			return tp.NewStatus(int32(errors.Forbidden), "", errors.Forbidden.StatusError())
 		}
-		if token, ok := tokenV.Interface().(string); ok {
-			fmt.Println("token: ", token)
+		if _, ok := tokenV.Interface().(string); ok {
+
 		} else {
 			return tp.NewStatus(int32(errors.BadRequest), "", errors.BadRequest.StatusError())
 		}
