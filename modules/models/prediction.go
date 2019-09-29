@@ -21,6 +21,7 @@ func DetectiveObject(req *CameraRequest, model *COCOObjectDetectiveModel) ([]Det
 	for i := 0; i < int(num); i++ {
 		data = append(data, DetectivedObject{
 			Class:       classes[i],
+			Label:       model.GetLabel(i, probabilities, classes),
 			Box:         boxes[i],
 			Probability: probabilities[i],
 		})

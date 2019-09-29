@@ -11,10 +11,12 @@ import (
 
 type COCOObjectDetectiveModel struct {
 	ModelPath string `conf:"env"`
+	LabelPath string `conf:"env"`
 	model     *tf.SavedModel
 	session   *tf.Session
 
-	graph *tf.Graph
+	graph  *tf.Graph
+	labels []string
 
 	inputImageOp    *tf.Operation
 	outputBoxesOp   *tf.Operation
@@ -26,6 +28,9 @@ type COCOObjectDetectiveModel struct {
 func (mgr *COCOObjectDetectiveModel) Init() {
 	if mgr.ModelPath == "" {
 		logrus.Panic("[COCOObjectDetectiveModel] ModelPath should not be empty")
+	}
+	if mgr.LabelPath == "" {
+		logrus.Panic("[COCOObjectDetectiveModel] LabelPath should not be empty")
 	}
 
 	var err error
@@ -41,6 +46,8 @@ func (mgr *COCOObjectDetectiveModel) Init() {
 	mgr.outputScoresOp = mgr.graph.Operation("detection_scores")
 	mgr.outputClassesOp = mgr.graph.Operation("detection_classes")
 	mgr.outputNumOp = mgr.graph.Operation("num_detections")
+
+	mgr.labels = LoadLabels(mgr.LabelPath)
 }
 
 func (mgr *COCOObjectDetectiveModel) Close() error {
@@ -73,6 +80,10 @@ func (mgr *COCOObjectDetectiveModel) Predict(sourceImage []byte) (num float32, b
 	num = output[3].Value().([]float32)[0]
 
 	return
+}
+
+func (mgr *COCOObjectDetectiveModel) GetLabel(idx int, probabilities []float32, classes []float32) string {
+	return GetLabel(mgr.labels, idx, probabilities, classes)
 }
 
 func (mgr *COCOObjectDetectiveModel) loadModel(modelNames []string) (*tf.SavedModel, error) {
@@ -130,6 +141,7 @@ func decodeJpegGraph() (graph *tf.Graph, input, output tf.Output, err error) {
 
 type DetectivedObject struct {
 	Class       float32   `json:"class"`
+	Label       string    `json:"label"`
 	Box         []float32 `json:"box"`
 	Probability float32   `json:"probability"`
 }

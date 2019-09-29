@@ -75,6 +75,7 @@ var Config = struct {
 
 	COCOModel: &models.COCOObjectDetectiveModel{
 		ModelPath: "./config/mobilenet",
+		LabelPath: "./config/mobilenet/labels",
 	},
 
 	RobotConfiguration: RobotConfiguration{},
