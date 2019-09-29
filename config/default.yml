@@ -1,5 +1,6 @@
 GOENV: DEV
 S_CLIENTID_HOST: service-id.robot.rancher.internal
+S_COCOMODEL_LABELPATH: ./config/mobilenet/labels
 S_COCOMODEL_MODELPATH: ./config/mobilenet
 S_CONFIGAGENT_HOST: service-configurations.profzone.rancher.internal
 S_CONFIGAGENT_MODE: http
