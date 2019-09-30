@@ -1,12 +1,16 @@
 package models
 
 import (
+	"github.com/johnnyeven/service-vehicle-robot/constants/types"
 	"github.com/johnnyeven/service-vehicle-robot/modules"
-	"github.com/johnnyeven/vehicle-robot-client/constants"
 )
 
 type AuthRequestHeader struct {
 	Token string `json:"token"`
+}
+
+type TargetRequestHeader struct {
+	Target string `json:"target"`
 }
 
 type AuthRequest struct {
@@ -32,7 +36,14 @@ type NodesResponse struct {
 
 type PowerMovingRequest struct {
 	AuthRequestHeader
-	Target    string                    `json:"target"`
-	Direction constants.MovingDirection `json:"direction"`
-	Speed     float64                   `json:"speed"`
+	TargetRequestHeader
+	Direction types.MovingDirection `json:"direction"`
+	Speed     float64               `json:"speed"`
+}
+
+type CameraHolderRequest struct {
+	AuthRequestHeader
+	TargetRequestHeader
+	Direction types.HolderDirection `json:"direction"`
+	Angle     int                   `json:"angle"`
 }
