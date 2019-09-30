@@ -45,5 +45,5 @@ type CameraHolderRequest struct {
 	AuthRequestHeader
 	TargetRequestHeader
 	Direction types.HolderDirection `json:"direction"`
-	Angle     int                   `json:"angle"`
+	Offset    float64               `json:"offset"`
 }
