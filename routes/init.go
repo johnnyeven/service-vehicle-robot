@@ -14,6 +14,6 @@ func InitRouters() {
 	server.RegisterCallRouter(&authorization.Authorization{})
 	server.RegisterCallRouter(&nodes.Nodes{})
 	server.RegisterCallRouter(&detection.Detection{})
-	server.RegisterPushRouter(&camera.Camera{})
+	server.RegisterCallRouter(&camera.Camera{})
 	server.RegisterPushRouter(&power.Power{})
 }

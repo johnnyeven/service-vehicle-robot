@@ -7,18 +7,18 @@ import (
 	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
 
-func (r *Camera) Holder(req *models.CameraHolderRequest) *tp.Status {
+func (r *Camera) Holder(req *models.CameraHolderRequest) (bool, *tp.Status) {
 	if req == nil {
-		return nil
+		return false, nil
 	}
 	node, err := modules.Manager.GetNodeByKey(req.Target)
 	if err != nil {
-		return tp.NewStatus(int32(errors.NotFound), err.Error(), errors.NotFound.StatusError())
+		return false, tp.NewStatus(int32(errors.NotFound), err.Error(), errors.NotFound.StatusError())
 	}
 
 	if !node.IsOnline || node.Session == nil || !node.Session.Health() {
-		return tp.NewStatus(int32(errors.Forbidden), "远程端无法触达", errors.Forbidden.StatusError())
+		return false, tp.NewStatus(int32(errors.Forbidden), "远程端无法触达", errors.Forbidden.StatusError())
 	}
 
-	return node.Session.Push("/camera/holder", req)
+	return true, node.Session.Push("/camera/holder", req)
 }
