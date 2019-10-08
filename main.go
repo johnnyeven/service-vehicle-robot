@@ -19,6 +19,8 @@ func main() {
 
 	routes.InitRouters()
 	go global.Config.ServeHTTP.Serve(operators.RootRouter)
+	go global.Config.BroadcastManager.Start()
+	defer global.Config.BroadcastManager.Stop()
 
 	defer tp.FlushLogger()
 	go tp.GraceSignal()

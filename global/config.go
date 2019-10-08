@@ -38,6 +38,8 @@ var Config = struct {
 	COCOModel *models.COCOObjectDetectiveModel
 
 	RobotConfiguration RobotConfiguration
+
+	BroadcastManager *modules.BroadcastManager
 }{
 	Log: &log.Log{
 		Level: "DEBUG",
@@ -89,4 +91,6 @@ var Config = struct {
 			},
 		},
 	},
+
+	BroadcastManager: &modules.BroadcastManager{},
 }
