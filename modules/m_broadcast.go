@@ -1,6 +1,9 @@
 package modules
 
 import (
+	"encoding/json"
+	"github.com/johnnyeven/service-vehicle-robot/global"
+	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 	"github.com/sirupsen/logrus"
 	"net"
 	"time"
@@ -28,11 +31,17 @@ func (mgr *BroadcastManager) Start() {
 	ticker := time.NewTicker(10 * time.Second)
 	defer ticker.Stop()
 
+	broadcast := models.BroadcastRequest{Port: global.Config.ServeTeleport.Port}
+	bytes, err := json.Marshal(broadcast)
+	if err != nil {
+		logrus.Panic(err)
+	}
+
 Run:
 	for {
 		select {
 		case <-ticker.C:
-			_, err := mgr.conn.Write([]byte("hello world"))
+			_, err := mgr.conn.Write(bytes)
 			if err != nil {
 				logrus.Warningf("[BroadcastManager] conn.Write err: %v", err)
 				continue
@@ -45,6 +54,7 @@ Run:
 }
 
 func (mgr *BroadcastManager) Stop() error {
+	logrus.Info("[BroadcastManager] stop broadcast")
 	mgr.quit <- struct{}{}
 	return mgr.conn.Close()
 }

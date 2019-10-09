@@ -5,6 +5,10 @@ import (
 	"github.com/johnnyeven/service-vehicle-robot/modules"
 )
 
+type BroadcastRequest struct {
+	Port uint16 `json:"port"`
+}
+
 type AuthRequestHeader struct {
 	Token string `json:"token"`
 }
