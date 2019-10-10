@@ -66,11 +66,13 @@ var Config = struct {
 
 	ClientID: &client_id.ClientID{
 		Client: client.Client{
-			Host: "service-id.profzone.service.profzone.net",
+			Host: "localhost",
+			Port: 8001,
 		},
 	},
 	ConfigAgent: &config_agent.Agent{
-		Host:               "service-configurations.profzone.service.profzone.net",
+		Host:               "localhost",
+		Port:               8002,
 		PullConfigInterval: 60,
 		StackID:            124,
 	},
