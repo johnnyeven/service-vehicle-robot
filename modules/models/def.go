@@ -48,8 +48,8 @@ type PowerMovingRequest struct {
 type CameraHolderRequest struct {
 	AuthRequestHeader
 	TargetRequestHeader
-	Direction types.HolderDirection `json:"direction"`
-	Offset    float64               `json:"offset"`
+	HorizonOffset  float64 `json:"horizonOffset"`
+	VerticalOffset float64 `json:"verticalOffset"`
 }
 
 type RegisterNodeBody struct {
