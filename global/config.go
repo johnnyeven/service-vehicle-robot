@@ -87,7 +87,7 @@ var Config = struct {
 		Plugins: []tp.Plugin{
 			&middlewares.AuthPlugin{},
 			&middlewares.DisconnectPlugin{
-				Mgr: modules.Manager,
+				Mgr: models.Manager,
 			},
 		},
 	},

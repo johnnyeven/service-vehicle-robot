@@ -2,12 +2,11 @@ package camera
 
 import (
 	"github.com/henrylee2cn/teleport"
-	"github.com/johnnyeven/service-vehicle-robot/modules"
 	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
 
 func (r *Camera) Transfer(req *models.CameraRequest) (bool, *tp.Status) {
-	mgr := modules.Manager
+	mgr := models.Manager
 	host := mgr.GetHostNode()
 	if host == nil {
 		return true, nil

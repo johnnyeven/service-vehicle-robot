@@ -3,12 +3,12 @@ package middlewares
 import (
 	"github.com/henrylee2cn/teleport"
 	"github.com/johnnyeven/service-vehicle-robot/constants/types"
-	"github.com/johnnyeven/service-vehicle-robot/modules"
+	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 	"github.com/sirupsen/logrus"
 )
 
 type DisconnectPlugin struct {
-	Mgr *modules.NodeManager
+	Mgr *models.NodeManager
 }
 
 func (*DisconnectPlugin) Name() string {

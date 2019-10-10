@@ -2,7 +2,6 @@ package modules
 
 import (
 	"encoding/json"
-	"github.com/johnnyeven/service-vehicle-robot/global"
 	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 	"github.com/sirupsen/logrus"
 	"net"
@@ -27,11 +26,11 @@ func (mgr *BroadcastManager) Init() {
 	mgr.quit = make(chan struct{})
 }
 
-func (mgr *BroadcastManager) Start() {
+func (mgr *BroadcastManager) Start(port uint16) {
 	ticker := time.NewTicker(10 * time.Second)
 	defer ticker.Stop()
 
-	broadcast := models.BroadcastRequest{Port: global.Config.ServeTeleport.Port}
+	broadcast := models.BroadcastRequest{Port: port}
 	bytes, err := json.Marshal(broadcast)
 	if err != nil {
 		logrus.Panic(err)

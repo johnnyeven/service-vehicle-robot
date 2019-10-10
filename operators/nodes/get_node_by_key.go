@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/johnnyeven/libtools/courier"
 	"github.com/johnnyeven/libtools/courier/httpx"
-	"github.com/johnnyeven/service-vehicle-robot/modules"
+	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 	"github.com/sirupsen/logrus"
 )
 
@@ -24,7 +24,7 @@ func (req GetNodeByKey) Path() string {
 }
 
 func (req GetNodeByKey) Output(ctx context.Context) (result interface{}, err error) {
-	result, err = modules.Manager.GetNodeByKey(req.Key)
+	result, err = models.Manager.GetNodeByKey(req.Key)
 	if err != nil {
 		logrus.Errorf("[GetNodeByKey] NodeManager.GetNodeByKey err: %v, request: %+v", err, req)
 	}

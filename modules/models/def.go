@@ -1,8 +1,8 @@
 package models
 
 import (
+	tp "github.com/henrylee2cn/teleport"
 	"github.com/johnnyeven/service-vehicle-robot/constants/types"
-	"github.com/johnnyeven/service-vehicle-robot/modules"
 )
 
 type BroadcastRequest struct {
@@ -35,7 +35,7 @@ type GetNodesRequest struct {
 }
 
 type NodesResponse struct {
-	Nodes []*modules.Node `json:"nodes"`
+	Nodes []*Node `json:"nodes"`
 }
 
 type PowerMovingRequest struct {
@@ -50,4 +50,32 @@ type CameraHolderRequest struct {
 	TargetRequestHeader
 	Direction types.HolderDirection `json:"direction"`
 	Offset    float64               `json:"offset"`
+}
+
+type RegisterNodeBody struct {
+	// key
+	Key string `json:"key"`
+	// secret
+	Secret string `json:"secret"`
+	// 描述
+	Comment string `json:"comment"`
+	// 端类型
+	NodeType types.NodeType `json:"nodeType"`
+}
+
+type Node struct {
+	// key
+	Key string `json:"key"`
+	// secret
+	Secret string `json:"secret"`
+	// 描述
+	Comment string `json:"comment"`
+	// 端类型
+	NodeType types.NodeType `json:"nodeType"`
+	// peer
+	Session tp.CtxSession `json:"-"`
+	// Token
+	Token string `json:"token"`
+	// 是否在线
+	IsOnline bool `json:"isOnline"`
 }

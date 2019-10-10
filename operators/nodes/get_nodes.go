@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/johnnyeven/libtools/courier"
 	"github.com/johnnyeven/libtools/courier/httpx"
-	"github.com/johnnyeven/service-vehicle-robot/modules"
+	"github.com/johnnyeven/service-vehicle-robot/modules/models"
 )
 
 func init() {
@@ -21,6 +21,6 @@ func (req GetNodes) Path() string {
 }
 
 func (req GetNodes) Output(ctx context.Context) (result interface{}, err error) {
-	result = modules.Manager.GetRobotNode()
+	result = models.Manager.GetRobotNode()
 	return
 }

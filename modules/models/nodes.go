@@ -1,9 +1,8 @@
-package modules
+package models
 
 import (
 	"encoding/base64"
 	"github.com/google/uuid"
-	"github.com/henrylee2cn/teleport"
 	"github.com/johnnyeven/libtools/sqlx"
 	"github.com/johnnyeven/service-vehicle-robot/constants/types"
 	"github.com/johnnyeven/service-vehicle-robot/database"
@@ -11,34 +10,6 @@ import (
 )
 
 var Manager = &NodeManager{}
-
-type RegisterNodeBody struct {
-	// key
-	Key string `json:"key"`
-	// secret
-	Secret string `json:"secret"`
-	// 描述
-	Comment string `json:"comment"`
-	// 端类型
-	NodeType types.NodeType `json:"nodeType"`
-}
-
-type Node struct {
-	// key
-	Key string `json:"key"`
-	// secret
-	Secret string `json:"secret"`
-	// 描述
-	Comment string `json:"comment"`
-	// 端类型
-	NodeType types.NodeType `json:"nodeType"`
-	// peer
-	Session tp.CtxSession `json:"-"`
-	// Token
-	Token string `json:"token"`
-	// 是否在线
-	IsOnline bool `json:"isOnline"`
-}
 
 func (n *Node) GenerateToken() string {
 	data := n.Key + uuid.New().String()
