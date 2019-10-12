@@ -15,3 +15,4 @@ main
 tests/logs/*
 service-vehicle-robot
 Makefile
+config/raw_config

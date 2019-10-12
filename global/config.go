@@ -2,6 +2,7 @@ package global
 
 import (
 	"github.com/henrylee2cn/teleport"
+	"github.com/johnnyeven/libtools/bus"
 	"github.com/johnnyeven/libtools/clients/client_id"
 	"github.com/johnnyeven/libtools/config_agent"
 	"github.com/johnnyeven/libtools/courier/client"
@@ -34,6 +35,7 @@ var Config = struct {
 
 	ClientID    *client_id.ClientID
 	ConfigAgent *config_agent.Agent
+	MessageBus  *bus.MessageBus
 
 	COCOModel *models.COCOObjectDetectiveModel
 
@@ -70,6 +72,7 @@ var Config = struct {
 			Port: 8001,
 		},
 	},
+	MessageBus: &bus.MessageBus{},
 	ConfigAgent: &config_agent.Agent{
 		Host:               "localhost",
 		Port:               8002,

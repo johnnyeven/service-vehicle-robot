@@ -13,7 +13,8 @@ func main() {
 	servicex.Execute()
 
 	global.Config.ConfigAgent.BindConf(&global.Config.RobotConfiguration)
-	global.Config.ConfigAgent.Start()
+	global.Config.ConfigAgent.BindBus(global.Config.MessageBus)
+	go global.Config.ConfigAgent.Start()
 
 	models.Manager.Init(global.Config.MasterDB.Get())
 
