@@ -91,7 +91,6 @@ func (a Agent) DockerDefaults() conf.DockerDefaults {
 }
 
 func (a *Agent) Init() {
-	a.client.Init()
 	a.rawConfig = make([]RawConfig, 0)
 	a.configMap = make(map[string]string)
 }
@@ -115,6 +114,8 @@ func (a *Agent) Start() {
 	if a.bus == nil {
 		panic("bus is not bind, please use BindBus to bind a MessageBus entry first.")
 	}
+
+	a.bus.RegisterTopic(DiffConfigTopic)
 
 	a.getFistRunConfig()
 	a.runtimeConfig()
@@ -209,6 +210,7 @@ func (a *Agent) getRuntimeConfig() {
 	diff := a.diffConfig(currentConfigMap)
 	for _, v := range diff {
 		a.bus.Emit(DiffConfigTopic, v, "")
+		a.configMap[v.Key] = v.Value
 	}
 }
 
