@@ -25,5 +25,6 @@ func main() {
 
 	defer tp.FlushLogger()
 	go tp.GraceSignal()
+	tp.SetLoggerLevel2(tp.ERROR)()
 	global.Config.ServeTeleport.Start()
 }
